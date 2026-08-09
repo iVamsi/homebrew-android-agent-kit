@@ -31,7 +31,7 @@ class Droidagent < Formula
   test do
     # Exercises the real entry point: the wrapper must find the JRE and the jar must run.
     # Deliberately only --help -- the CLI has no --version flag, and asserting one would fail
-    #  on every install.
+    # `brew test` on every install.
     output = shell_output("#{bin}/droidagent --help")
     assert_match "serve-mcp", output
     assert_match "doctor", output
