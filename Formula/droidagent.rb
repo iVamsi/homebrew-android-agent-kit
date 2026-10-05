@@ -2,18 +2,18 @@
 class Droidagent < Formula
   desc "Android development MCP server: Gradle, adb, logcat, crash triage, Perfetto"
   homepage "https://github.com/iVamsi/droid-agent-kit"
-  url "https://github.com/iVamsi/droid-agent-kit/releases/download/v0.3.0-alpha/droidagent-cli-0.3.0-alpha.jar", using: :nounzip
-  sha256 "03d86a8916f790c9f9ae8eeaba5ed6b7c8c0d464ce83f116fc2c67f0f47680e5"
+  url "https://github.com/iVamsi/droid-agent-kit/releases/download/v0.3.1-alpha/droidagent-cli-0.3.1-alpha.jar", using: :nounzip
+  sha256 "8a5546010b781f7ad45911f85ce369f96df675f22f8fb29dc9de355a5c3cbaff"
   license "Apache-2.0"
-  version "0.3.0-alpha"
+  version "0.3.1-alpha"
 
   depends_on "openjdk@17"
 
   def install
-    libexec.install "droidagent-cli-0.3.0-alpha.jar"
+    libexec.install "droidagent-cli-0.3.1-alpha.jar"
     (bin/"droidagent").write <<~SH
       #!/bin/bash
-      exec "#{Formula["openjdk@17"].opt_bin}/java" -jar "#{libexec}/droidagent-cli-0.3.0-alpha.jar" "$@"
+      exec "#{Formula["openjdk@17"].opt_bin}/java" -jar "#{libexec}/droidagent-cli-0.3.1-alpha.jar" "$@"
     SH
     chmod 0755, bin/"droidagent"
   end
